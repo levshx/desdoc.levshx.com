@@ -1,5 +1,7 @@
 import asyncdispatch, jester, os, strutils
 
+echo "lol"
+
 router myrouter:
   get "/":
     resp "Hello! from nim"
