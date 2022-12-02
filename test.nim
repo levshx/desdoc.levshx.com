@@ -23,4 +23,4 @@ proc cb(req: Request) {.async, gcsafe.} =
   await req.respond(Http200, "Hello World")
 
 var server = newAsyncHttpServer()
-waitFor server.serve(Port(9001), cb)
+waitFor server.serve(Port(2222), cb)

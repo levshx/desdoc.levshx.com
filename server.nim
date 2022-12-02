@@ -1,15 +1,16 @@
-import asyncdispatch, jester, os, strutils, times
+import asyncdispatch, jester
 
-echo "lol"
+import views/hello, views/general
 
-router myrouter:
+
+router routings:
   get "/":
-    resp "Generated in nim " & $now()
+    resp renderMain(hello("levshx"))
 
 proc main() =
   let port = Port(5000)
   let settings = newSettings(port=port)
-  var jester = initJester(myrouter, settings=settings)
+  var jester = initJester(routings, settings=settings)
   jester.serve()
 
 when isMainModule:
