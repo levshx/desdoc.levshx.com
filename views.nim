@@ -90,7 +90,7 @@ proc register*(ctx: Context) {.async.} =
 proc read*(ctx: Context) {.async.} =
   let db = open(consts.dbPath, "", "", "")
   var posts: seq[seq[string]] = @[]
-  for x in db.fastRows(sql"SELECT * FROM posts"):
+  for x in db.fastRows(sql"SELECT * FROM posts ORDER BY created DESC"):
     posts.add(x)
 
   db.close()
