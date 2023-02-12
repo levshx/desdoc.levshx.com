@@ -7,7 +7,8 @@ import prologue
 
 import
   share/head,
-  share/nav
+  share/nav,
+  share/footer
 
 
 proc loginSection*(ctx: Context, title: string, error: string = ""): VNode =
@@ -29,9 +30,11 @@ proc loginPage*(ctx: Context, title: string, error: string = ""): string =
   let head = sharedHead(ctx, title)
   let nav = sharedNav(ctx)
   let login = loginSection(ctx, title, error)
+  let foot = sharedFooter(ctx)
   let vNode = buildHtml(html):
     head
     nav
     login
+    foot
 
   result = "<!DOCTYPE html>\n" & $vNode

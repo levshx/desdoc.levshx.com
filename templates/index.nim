@@ -5,7 +5,8 @@ import prologue
 
 import
   share/head,
-  share/nav
+  share/nav,
+  share/footer
 
 
 # This is 'primary' section for our template it separated for convenience
@@ -37,11 +38,13 @@ proc indexPage*(ctx: Context, title: string, posts: seq[seq[string]]): string =
   let head = sharedHead(ctx, title) # 'shared' head part
   let nav = sharedNav(ctx) # 'shared' navbar
   let posts = indexSection(ctx, posts) # 'primary' section from above
+  let foot = sharedFooter(ctx)
   let vNode = buildHtml(html):
     # Call our sections
     head
     nav
     posts
+    foot
 
   # Don't forget Doctype declaration to avoid any failing validation tests
   # like this one https://validator.w3.org/

@@ -3,7 +3,8 @@ import prologue
 
 import
   share/head,
-  share/nav
+  share/nav,
+  share/footer
 
 
 proc editSection*(ctx: Context, post: seq[string] = @[]): VNode =
@@ -38,9 +39,11 @@ proc editPage*(ctx: Context, title: string, post: seq[string] = @[]): string =
   let head = sharedHead(ctx, title)
   let nav = sharedNav(ctx)
   let edit = editSection(ctx, post)
+  let foot = sharedFooter(ctx)
   let vNode = buildHtml(html):
     head
     nav
     edit
+    foot
 
   result = "<!DOCTYPE html>\n" & $vNode
