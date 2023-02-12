@@ -15,7 +15,7 @@ let
   env = loadPrologueEnv(".env")
   settings = newSettings(appName = env.getOrDefault("appName", "Prologue"),
       debug = env.getOrDefault("debug", true),
-      port = Port(env.getOrDefault("port", 5555)),
+      port = Port(5555),
       secretKey = env.getOrDefault("secretKey", "")
   )
 
