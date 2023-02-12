@@ -1,2 +1,5 @@
 # DESIGN DOCUMENT
-DESIGN DOCUMENT for https://play.levshx.com/
+
+https://desdoc.levshx.com/
+
+DESIGN DOCUMENT for a game in development https://play.levshx.com/
