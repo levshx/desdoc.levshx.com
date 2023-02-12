@@ -1,4 +1,4 @@
-import karax / [karaxdsl, vdom]
+import karax / [karaxdsl, vdom], uri
 import prologue
 
 import

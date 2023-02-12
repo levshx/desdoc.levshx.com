@@ -1,4 +1,4 @@
-import db_sqlite, strformat
+import db_sqlite, strformat, std/uri
 
 import prologue
 import prologue/security/hasher
